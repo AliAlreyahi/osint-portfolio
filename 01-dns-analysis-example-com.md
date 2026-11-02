@@ -99,6 +99,32 @@ It also highlights the importance of interpreting DNS findings carefully and avo
 
 ## 7. Ethics
 
+## 8. SOA Record Analysis
+
+**Command:**
+
+`nslookup -type=SOA example.com`
+
+**Observed Results:**
+
+| Field | Observed Value |
+|---|---|
+| Primary Name Server | elliott.ns.cloudflare.com |
+| Responsible Mail Address | dns.cloudflare.com |
+| Serial | 2418004112 |
+| Refresh | 10000 seconds |
+| Retry | 2400 seconds |
+| Expire | 604800 seconds |
+| Default TTL | 1800 seconds |
+
+**Analysis:**
+
+The SOA record identifies the primary nameserver and provides DNS zone management parameters, including the serial number and refresh, retry, and expiry intervals.
+
+These values describe the published DNS zone configuration and do not reveal the complete internal infrastructure.
+
+**Evidence Source:** Public DNS query using `nslookup`.
+
 This research was conducted for educational purposes using publicly available DNS information.
 
 No unauthorized access, intrusive scanning, or exploitation was performed.
